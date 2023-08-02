@@ -1,15 +1,9 @@
-const users = [
-    { id: 1, name: 'John Doe' },
-    { id: 2, name: 'Jane Doe' },
-    { id: 3, name: 'James Doe' }
-];
+import User from "../models/User.js";
 
 export const getAllUsers = async () => {
-    return users;
+    return await User.getAll();
 };
 
 export const getUserById = async (id) => {
-    const user = users.find((user) => user.id == id);
-
-    return user;
+    return await User.getById(id);
 };
