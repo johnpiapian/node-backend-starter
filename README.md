@@ -33,7 +33,7 @@ Follow these steps to get the project up and running:
 
 1. Clone this repository to your local machine:
 ```bash
-git clone https://github.com/johnpiapian/node-backend-starter.git
+git clone https://github.com/johnpiapian/node-backend-template.git
 ```
 2. Install the dependencies:
 ```bash
