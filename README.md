@@ -32,6 +32,45 @@ Make sure you have the following software installed on your system:
 Follow these steps to get the project up and running:
 
 1. Clone this repository to your local machine:
-
 ```bash
 git clone https://github.com/johnpiapian/node-backend-starter.git
+```
+2. Install the dependencies:
+```bash
+cd node-backend-starter && npm install
+```
+3. Manage Prisma
+```bash
+npm run db-migrate
+
+npm run db-reset # recreate the database
+```
+4. Start the development server:
+```bash
+npm run dev
+```
+Your Node.js Express server should now be running on http://localhost:3000.
+
+
+## Testing
+To run the tests using Jest, use the following command:
+```bash
+npm run test
+```
+
+## Docker Support
+To run the application using Docker, make sure you have Docker installed on your machine. Then, use the provided Dockerfile to build and run the container:
+```bash
+npm run docker-start
+
+npm run docker-stop
+
+npm run docker-delete # delete all images, volumes, and etc
+```
+
+## Authentication
+This starter template includes a basic JWT authentication setup. However, it's recommended to further customize and enhance the authentication mechanism based on your specific requirements.
+
+## Contributing
+Contributions are welcome! If you find any issues or want to suggest improvements, feel free to open an issue or submit a pull request. Happy coding! If you have any questions or need further assistance, feel free to reach out. [Sut Tuang](https://suttuang.com/)
+
