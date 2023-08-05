@@ -1,8 +1,8 @@
 FROM node:18-alpine
 
 # create app directory and copy source code
-WORKDIR /dev/backend
-COPY . /dev/backend
+WORKDIR /app/backend
+COPY . .
 
 # install dependencies and run production build
 RUN npm install

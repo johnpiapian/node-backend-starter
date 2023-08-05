@@ -1,7 +1,20 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
+let initialized = false;
 
-async function main() {
+async function connect() {
+    try {
+        await prisma.$connect();
+        console.log('Database connected!');
+    } catch (e) {
+        console.error(e);
+        throw e;
+    } finally {
+        await prisma.$disconnect();
+    }
+}
+
+async function populate() {
     // reset data
     await prisma.user.deleteMany();
     await prisma.post.deleteMany();
@@ -19,12 +32,14 @@ async function main() {
     await prisma.post.create({ data: { title: 'Post 5', content: 'Content 5', published: true } });
 }
 
-main()
-    .catch((e) => {
-        throw e;
-    })
-    .finally(async () => {
-        await prisma.$disconnect();
-    });
+async function main() {
+    if (!initialized) {
+        await connect();
+        await populate();
+        initialized = true;
+    }
+}
+
+await main();
 
 export default prisma;
