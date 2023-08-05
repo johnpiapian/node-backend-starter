@@ -8,7 +8,7 @@
 ![JWT](https://img.shields.io/badge/JWT-v9.0.0-green.svg)
 ![Bcrypt](https://img.shields.io/badge/Bcrypt-v5.1.0-yellow.svg)
 
-Welcome to the Node.js Express Prisma Starter Template! This repository serves as a solid foundation for building web applications using Node.js with Express for the server, Prisma as the database ORM, JWT for authentication, Bcrypt for password hashing, Jest for testing, and Docker for containerization.
+Welcome to the Node.js Express Prisma Starter Template! This repository serves as a solid foundation for building API using Node.js with Express for the server, Prisma as the database ORM, JWT for authentication, Bcrypt for password hashing, Jest for testing, and Docker for containerization. This template will help you get started quickly and efficiently with building robust and secure API applications.
 
 ## Features
 
