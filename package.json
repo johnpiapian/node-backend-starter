@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db-reset": "prisma migrate reset --force",
+    "db-migrate": "prisma migrate dev --name init"
   },
   "author": "",
   "license": "ISC",

@@ -1,16 +1,22 @@
 import db from '../configs/db.js';
 
-const getAll = async () => {
+export const getAll = async () => {
     return await db.user.findMany();
 };
 
-const getById = async (id) => {
+export const getById = async (id) => {
     return await db.user.findUnique({
         where: { id: parseInt(id) }
     });
 };
 
-const create = async ({ name, email }) => {
+export const getByEmail = async (email) => {
+    return await db.user.findUnique({
+        where: { email }
+    });
+};
+
+export const create = async ({ name, email }) => {
     return await db.user.create({
         data: {
             name,
@@ -19,7 +25,7 @@ const create = async ({ name, email }) => {
     });
 };
 
-const update = async (id, { name, email }) => {
+export const update = async (id, { name, email }) => {
     return await db.user.update({
         where: { id: parseInt(id) },
         data: {
@@ -29,10 +35,8 @@ const update = async (id, { name, email }) => {
     });
 };
 
-const remove = async (id) => {
+export const remove = async (id) => {
     return await db.user.delete({
         where: { id: parseInt(id) }
     });
 };
-
-export default { getAll, getById, create, update, remove};
